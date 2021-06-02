@@ -1,0 +1,109 @@
+    <!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>号码输入、输出集成页面</title>
+
+<script type="text/javascript" src="./zuxzzx.js"></script>
+
+
+
+</head>
+
+
+
+<body style="width:100%; height:auto; text-align:center; margin-left:auto; margin-right:auto;">
+
+<form name="biao1" id="biao1" method="POST" action="">
+
+<div id="danshi" style="float:left; display:block; width:460px; height:auto; border:1px solid #f00;">
+
+<div id="div1" style="width:450px; border:1px solid #CCC;">
+
+<p>3D直选插入数据(8:30以后）</p>
+
+<p>号码：<input type="text" style="width:150px; height:30px;" name="num1" id="num1" />
+
+倍数：<input type="text" style="width:150px; height:30px;" name="beishu1" id="beishu1"  /></p>
+
+<p style="text-align:center;"><input type="submit" value="提交" class="btn btn-default" style="width:100px; height:30px;" onclick="javascript:this.form.action='msg1.php';"></p>
+
+         <input type="submit" name="delall" value="删除3D表所有数据" style="width:150px; height:30px;" onclick="javascript:this.form.action='del3dzx.php';" />
+
+         <input type="submit" name="delone" value="删除3D最新1条数据" style="width:150px; height:30px;" onclick="javascript:this.form.action='del3dzx.php';"/>
+
+</div>
+
+<div id="div2" style="width:450px; border:1px solid #CCC; margin-top:20px;">
+
+<p>P3直选插入数据(08:30以前）</p>
+
+<p>号码：<input type="text" style="width:150px; height:30px;" name="num2"  />
+
+倍数：<input type="text" style="width:150px; height:30px;" name="beishu2"  /></p>
+
+<p style="text-align:center;"><input type="submit" value="提交" class="btn btn-default" style="width:100px; height:30px;" onclick="javascript:this.form.action='msg4.php';"></p>
+
+         <input type="submit" name="delall" value="删除P3表所有数据" style="width:150px; height:30px;" onclick="javascript:this.form.action='delp3zx.php';" />
+
+         <input type="submit" name="delone" value="删除P3最新1条数据" style="width:150px; height:30px;" onclick="javascript:this.form.action='delp3zx.php';"/>
+
+</div>
+
+</div>
+
+<div id="divjsq" style="width:550px; height:386px; display:block; float:left;  border:1px solid #f00; margin-left:10px;">
+
+<div id="divjsqleft" style="width:400px; float:left; display:block;">
+
+<p>
+
+混合【组选】转【直选】：<input type="text" style="width:150px; height:30px;" id="strnum1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+<input type="button" value="转化" style="width:80px; height:30px;" onclick="btn1()" />
+<input type="button" value="复制" style="width:80px; height:30px;" onclick="copyText()" />
+</p>
+<p>
+	
+
+组三【复式】转【单式】：<input type="text" style="width:150px; height:30px;" id="strnum2" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+<input type="button" value="转化" style="width:80px; height:30px;"  onclick="setListNum(3)"  />
+<input type="button" value="复制" style="width:80px; height:30px;" onclick="copyText()" />
+</p>
+
+<p>
+
+组六【复式】转【单式】：<input type="text" style="width:150px; height:30px;" id="strnum3" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+<input type="button" value="转化" style="width:80px; height:30px;"  onclick="setListNum(6)"  />
+<input type="button" value="复制" style="width:80px; height:30px;" onclick="copyText()" />
+</p>
+
+<p>
+
+直选【复式】转【单式】：<input type="text" style="width:150px; height:30px;" id="strnum4" /><input type="button" value="转化" style="width:80px; height:30px;" onclick="btn2()" />
+<input type="button" value="复制" style="width:80px; height:30px;" onclick="copyText()" /></p>
+
+<p style="text-align:right;">
+
+<input type="button" value="一键复制并清空" style="width:150px; height:30px;" onclick="copyText()" />
+
+</p>
+
+<textarea id="txtdata"  >显示复制的内容</textarea>
+
+</div>
+
+<div id="divdata" style="width:540px; height:200px; float:left; display:block; border:1px solid #666;">这里输出数组结果</div>
+
+</div>
+
+
+</form>
+
+</body>
+
+</html>
+
